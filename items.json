@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "amount": 20,
+      "description": "Water 0"
+    },
+    {
+      "id": 2,
+      "amount": 10,
+      "description": "Water 1"
+    },
+    {
+      "id": 3,
+      "amount": 50,
+      "description": "Water 2"
+    }
+  ]
+}
