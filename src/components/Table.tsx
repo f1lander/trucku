@@ -1,11 +1,23 @@
 import React, { useEffect } from 'react';
 import 'bulma/css/bulma.min.css';
-import { addExpense, removeExpense, getItems } from '../reducers/expenses';
+import { addExpense, removeExpense, getItems } from '../actions/ExpensesActions';
+import { IExpensesState, expensesSelector, IItemState } from '../reducers/ExpensesReducer';
 import { connect } from 'react-redux';
 
-function Table(props) {
-    const { items } = props;
+interface ITableProps {
+    items: Array<IItemState>;
 
+    addExpenseAction: typeof addExpense; 
+    removeExpenseAction: typeof removeExpense;
+    getItemsAction: typeof getItems;
+}
+
+const Table: React.FC<ITableProps> = ({
+    items,
+    addExpenseAction,
+    removeExpenseAction,
+    getItemsAction
+}) => {
     const handleAddExpense = () => {
         debugger;
         const newExpense = {
@@ -14,16 +26,16 @@ function Table(props) {
             description: 'Water 0'
         }
 
-        props.addExpense(newExpense);
+        addExpenseAction(newExpense);
     };
 
-    const handleRemoveExpense = (id) => {
+    const handleRemoveExpense = (id: number) => {
         debugger;
-        props.removeExpense(id);
+        removeExpenseAction(id);
     };
 
     useEffect(() => {
-        props.getItems();
+        getItemsAction();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -56,14 +68,14 @@ function Table(props) {
     );
 }
 
-const mapStateToProps = state => ({
-    items: state.items,
+const mapStateToProps = (state: IExpensesState) => ({
+    items: expensesSelector(state),
 });
 
 const mapDispatchToProps = {
-    addExpense,
-    removeExpense,
-    getItems
+    addExpenseAction: addExpense,
+    removeExpenseAction: removeExpense,
+    getItemsAction: getItems
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);

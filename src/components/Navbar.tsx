@@ -4,68 +4,68 @@ import React from 'react';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import Table from './Table';
 
-function NavBar(props) {
+const NavBar: React.FC = () => {
 
     return (
         <Router>
             <div className="container">
-                <nav class="navbar" role="navigation" aria-label="main navigation">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="https://bulma.io">
+                <nav className="navbar" role="navigation" aria-label="main navigation">
+                    <div className="navbar-brand">
+                        <a className="navbar-item" href="https://bulma.io">
                             <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
                         </a>
 
-                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                             <span aria-hidden="true"></span>
                         </a>
 
-                        <div id="navbarBasicExample" class="navbar-menu">
-                            <div class="navbar-start">
-                                <Link to="/" class="navbar-item">
+                        <div id="navbarBasicExample" className="navbar-menu">
+                            <div className="navbar-start">
+                                <Link to="/" className="navbar-item">
                                     Dashboard
                                 </Link>
-                                <Link to="/table" class="navbar-item">
+                                <Link to="/table" className="navbar-item">
                                     Table
                                 </Link>
-                                <Link class="navbar-item">
+                                <Link to="/clients" className="navbar-item">
                                     Clientes
                                 </Link>
-                                <Link to="references-guides" class="navbar-item">
+                                <Link to="references-guides" className="navbar-item">
                                     Guias de Remisión
                                 </Link>
 
-                                <div class="navbar-item has-dropdown is-hoverable">
-                                    <Link class="navbar-link">
+                                <div className="navbar-item has-dropdown is-hoverable">
+                                    <Link to="/#" className="navbar-link">
                                         More
                                     </Link>
 
-                                    <div class="navbar-dropdown">
-                                        <Link class="navbar-item">
+                                    <div className="navbar-dropdown">
+                                        <Link to="/#" className="navbar-item">
                                             About
                                         </Link>
-                                        <Link class="navbar-item">
+                                        <Link to="/#" className="navbar-item">
                                             Jobs
                                         </Link>
-                                        <Link class="navbar-item">
+                                        <Link to="/#" className="navbar-item">
                                             Contact
                                         </Link>
-                                        <hr class="navbar-divider" />
-                                        <Link class="navbar-item">
+                                        <hr className="navbar-divider" />
+                                        <Link to="/#" className="navbar-item">
                                             Report an issue
                                             </Link>
 
                                     </div>
                                 </div>
                             </div>
-                            <div class="navbar-end">
-                                <div class="navbar-item">
-                                    <div class="buttons">
-                                        <Link class="button is-primary">
+                            <div className="navbar-end">
+                                <div className="navbar-item">
+                                    <div className="buttons">
+                                        <Link to="/#" className="button is-primary">
                                             <strong>Sign up</strong>
                                         </Link>
-                                        <Link class="button is-light">
+                                        <Link to="/#" className="button is-light">
                                             Log in
                                     </Link>
                                     </div>

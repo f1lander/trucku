@@ -6,7 +6,7 @@ import NavBar from './components/Navbar'
 import { Provider } from 'react-redux';
 import store from './store';
 
-const App = (props) => (
+const App = () => (
   <Provider store={store}>
     <NavBar />
   </Provider>
